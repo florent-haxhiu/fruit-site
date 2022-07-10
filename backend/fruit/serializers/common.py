@@ -1,10 +1,12 @@
-from dataclasses import field
-from pyexpat import model
 from rest_framework import serializers
-
-from fruit.models import Fruit
+from fruit.models import Fruit, List
 
 class FruitSerializer(serializers.ModelSerializer):
   class Meta:
     model = Fruit
+    fields = '__all__'
+
+class ListSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = List
     fields = '__all__'
