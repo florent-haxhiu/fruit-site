@@ -13,6 +13,7 @@ class FruitListView(APIView):
     serialized_fruits = FruitSerializer(fruits, many=True)
     return Response(serialized_fruits.data, status=status.HTTP_200_OK)
   def post(self, request):
+    print(request.data)
     serial = FruitSerializer(data=request.data)
     print(request.data)
     try:
